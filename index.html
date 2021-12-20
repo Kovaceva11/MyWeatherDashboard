@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/ac6946e395.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>My Weather Dashboard</title>
+  </head>
+  <body>
+    <header class="row">
+      <div class="col-md-12 bg-dark text-white text-center" id="header">
+        Adam's Weather Dashboard
+      </div>
+    </header>
+    
+    <div class="container">
+      <div class="row">
+        <aside class="col-lg-3 py-3 bg-dark text-white">
+            <!-- Search City Field -->
+            <h3 class="card-header">Enter City Name</h3>
+            <!-- Search Field -->
+            <div class="input-group mb-3 my-lg-0" id="cityField">
+                <input
+                  id="searchCity"
+                  class="form-control my-0 py-1"
+                  placeholder="City Search"
+                  aria-label="Search by City"
+                  aria-describedby="button-addon2"
+                />
+                <div class="cityPrepend">
+                  <button
+                    button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                  </button>
+                </div>
+            <!-- Local Stored Search History-->
+            <div class="card w-100 mt-5" id="searchHistory">
+                <h3 class="card-header bg-dark">Recent Searches</h3>
+                <div class="card bg-dark text-white text-center" id="recentCities">
+                    <ul></ul>
+                </div>
+                <div><button class= "btn btn-outline-secondary" id="deleteHistory">Clear History</button></div>
+            </div>
+        </aside>
+          <!-- Call API to show Weather Data -->
+        <section id="wxData" class="col-md-9">
+          <div class="container-fluid py-5 bg-dark text-white my-3" id="citydata">
+            <h2 class="display-5 mb-4 fw-bold"><span id="name"></span><img id="icon"/></h2>
+            <div class="display-6 mb-4 fw-bold text-white h5" id="date"></div>
+            <div class="display-12 mb-4 fw-bold text-white h6">Temp: <span id="temp"></span></div>
+            <div class="display-12 mb-4 fw-bold text-white h6">Humidity: <span id="humidity"></span></div>
+            <div class="display-12 mb-4 fw-bold text-white h6">Wind Speed: <span id="windspeed"></span></div>
+            <div class="display-12 mb-4 fw-bold text-white h6">UV Index: <span id="uvi"></span></d>
+          </div>
+          <!-- Add new cards with five day forecast here -->
+          <div class="row">
+            <div class="card-group col-md-12" id="5dayWx"></div>
+          </div>
+          
+
+        </section>        
+
+      </div>
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
